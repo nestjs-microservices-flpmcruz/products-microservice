@@ -21,7 +21,7 @@ export class ProductsController {
 
   @MessagePattern({cmd: 'find_one_product'})
   findOne(@Payload('id') id: number) {
-    return this.productsService.findOne(id);
+    return this.productsService.findOne(+id);
   }
 
   @MessagePattern({cmd: 'update_product'})
